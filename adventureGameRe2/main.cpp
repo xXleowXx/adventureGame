@@ -73,9 +73,10 @@ int main()
 				bool roll2 = true;
 				do
 				{
+					int fill = 0;
 					random = rand() % 6 + 1;
 					std::cout << "Press Return to roll" << std::endl;
-					std::cin >> fill;
+					system("pause");
 					std::cout << "You rolled " << random << std::endl;
 					if (random == 5)
 					{
@@ -93,7 +94,7 @@ int main()
 				{
 					random = rand() % 6 + 1;
 					std::cout << "Write Roll to roll" << std::endl;
-					std::cin >> fill;
+					system("pause");
 					std::cout << "You rolled " << random << std::endl;
 					if (random == 1)
 					{
@@ -112,13 +113,19 @@ int main()
 			if (lock1 == 2)
 			{
 				std::cout << "You finished the game !" << std::endl;
+				return 0;
 				break;
 			}
 			break;
 		case 5:
 			std::cout << "to be continued" << std::endl;
 			break;
+		case 4:
+			std::cout << "You gave up" << std::endl;
+			return 0;
+			break;
 		}
+		
 
 
 	} while (menu == true);
