@@ -4,26 +4,30 @@
 #include<time.h> //time functions library
 
 
-int main()
+int main() //Starting main class
 {
+	//Informations abou the game
 	std::cout << "Welcome to the game, your mission is to escape the prison which you are being held in" << std::endl;
 	std::cout << "-------------------------------------------------------------------------------------" << std::endl;
 	std::cout << "Your head hurts, you got strongly hit in a head just the second ago as you remember, woke up in small room" << std::endl;
+	//Start global varibles
 	int unlock1 = 0;
 	int random = 0;
 	int lock1 = 0;
 	bool menu = true;
 	int fill = 0;
-
+	//End global varibles
 	do
 	{
+		//Initialising int for user answer
 		int answer = 0;
 
-
+		//Main game menu
 		std::cout << "What can I do, that question started to repeat in your mind" << std::endl;
 		std::cout << "-----------------------------------------------------------" << std::endl;
 		std::cout << "1. Search the room" << std::endl;
 		std::cout << "2. Check what can you see outside" << std::endl;
+		//Depending on story progress different options in menu will appear
 		if (lock1 == 0)
 		{
 			std::cout << "3. Check the doors" << std::endl;
@@ -46,8 +50,9 @@ int main()
 		{
 			std::cout << "5. Read the note" << std::endl;
 		}
+		//user menu input
 		std::cin >> answer;
-		switch (answer)
+		switch (answer)//switching for answer
 		{
 		case 1:
 			std::cout << "You found a wierd key, you can move parts of it around. Maybe it can fit multiple doors ?" << std::endl;
@@ -72,7 +77,7 @@ int main()
 				bool roll1 = true;
 				bool roll2 = true;
 				do
-				{
+				{//randomising rolls and doing a small minigame
 					int fill = 0;
 					random = rand() % 6 + 1;
 					std::cout << "Press Return to roll" << std::endl;
@@ -122,12 +127,12 @@ int main()
 			break;
 		case 4:
 			std::cout << "You gave up" << std::endl;
-			return 0;
+			return 0;//ending game
 			break;
 		}
 		
 
 
-	} while (menu == true);
-	return 0;
-}
+	} while (menu == true);//ending while
+	return 0;//ending game
+}//ending main()
